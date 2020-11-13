@@ -4,7 +4,7 @@ Marvel_cinematic_universe_movie_ratings is a Jupyter Notebook which gathers and 
 
 ## Installation
 
-To run this code locally Python and Jupyer Notebook both need to be installed. Anaconda will install both.
+To run this code locally Python 3 and Jupyer Notebook both need to be installed. Anaconda will install both.
 
 Anaconda is available for Windows, Mac OS X, and Linux. You can find the installers at https://www.anaconda.com/download/ and the installation instructions [here](https://docs.anaconda.com/anaconda/install/).
 
