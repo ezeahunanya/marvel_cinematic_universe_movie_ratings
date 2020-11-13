@@ -17,5 +17,5 @@ conda upgrade --all
 Clone the GitHub repository and open the notebook.
 
 ```
-git clone {website}
+git clone https://github.com/ezeahunanya/marvel_cinematic_universe_movie_ratings.git
 ```
