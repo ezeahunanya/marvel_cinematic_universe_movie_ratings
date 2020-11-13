@@ -2,7 +2,7 @@
 
 Marvel_cinematic_universe_movie_ratings is a Jupyter Notebook which gathers and explores the ratings for movies in the Marvel Cinematic Universe. The data is gathered from the RottenTomatoes website using the get_movie_module.py module inside the repository.  
 
-##Installation
+## Installation
 
 To run this code locally Python and Jupyer Notebook both need to be installed. Anaconda will install both.
 
