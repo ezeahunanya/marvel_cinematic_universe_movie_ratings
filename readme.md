@@ -1,6 +1,6 @@
 # Marvel Cinematic Universe Movie Ratings
 
-'Marvel Cinematic Universe Movie Ratings' is a Jupyter Notebook which gathers and explores the ratings and scores for movies in the Marvel Cinematic Universe. The data is gathered from the RottenTomatoes website using the 'get_movie_module.py' module inside the repository.  
+'Marvel Cinematic Universe Movie Ratings' is a Jupyter Notebook which gathers and explores the ratings for movies in the Marvel Cinematic Universe. The data is gathered from the RottenTomatoes website using the 'get_movie_module.py' module inside the repository.  
 
 ##Installation
 
