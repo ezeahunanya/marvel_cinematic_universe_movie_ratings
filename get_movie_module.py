@@ -151,3 +151,41 @@ def get_movie_data(urls_list):
             df = pd.concat([df, df1], ignore_index = 'True')
 
     return df
+
+def get_movie_reviews(url_list):
+    """Get the movie reviews from its url.
+
+    Arg:
+    url: URL link containing movie data. This should be from Rotten Tomatoes
+    and in a list.
+
+    Returns:
+    df: A dataframe containing movie reviews."""
+
+    reviews = []
+    reviews_dictionary = {}
+    movie_title = []
+    critics_name = []
+    review_sentiment = []
+    reviews = []
+    review_date = []
+
+    for movie_url in url_list:
+        for i in [i for i in range(0, 6)]:
+            response = requests.get('{}/reviews?type=top_critics&sort=&page={}'.format(movie_url, i))
+            soup = BeautifulSoup(response.content, 'lxml')
+
+            for review in soup.find_all('div', class_="row review_table_row"):
+                movie_title.append(soup.title.text[:-len(' - Movie Reviews')])
+                critics_name.append(list(review.find('div', class_="col-sm-17 col-xs-32 critic_name").descendants)[2])
+                if 'fresh' in review.find('div', class_="col-xs-16 review_container").contents[1].attrs['class']:
+                    review_sentiment.append('fresh')
+                else:
+                    review_sentiment.append('rotten')
+                reviews.append(str(review.find('div', class_="the_review").string)[len('\r\n                    '):-len('\r\n                ')])
+                review_date.append(str(review.find('div', class_="review-date subtle small").string)[len('\r\n                '):-len('\r\n            ')])
+
+    reviews_dictionary["movie_title"], reviews_dictionary["critics_name"], reviews_dictionary["review_sentiment"], reviews_dictionary["review"], reviews_dictionary["review_date"] = movie_title, critics_name, review_sentiment, reviews, review_date
+    reviews_df = pd.DataFrame.from_dict(reviews_dictionary)
+
+    return reviews_df
