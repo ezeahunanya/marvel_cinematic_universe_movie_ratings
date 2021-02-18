@@ -153,7 +153,7 @@ def get_movie_data1(urls_list):
 
     movies_ratings_df = pd.DataFrame.from_dict(movie_dictionary)
 
-    return movies_ratings_df  
+    return movies_ratings_df
 
 def get_movie_data(urls_list):
     """Get the movie data from its url.
@@ -173,7 +173,7 @@ def get_movie_data(urls_list):
 
             # extract scores data as dictionary
             scores_text = (soup.find_all('script', type=
-                                        'text/javascript')[2].text)
+                                        'text/javascript')[2].string)
             scores_text_lines_list = scores_text.split('\n')
             for line in scores_text_lines_list:
                 if 'root.RottenTomatoes.context.scoreInfo' in line:
@@ -240,7 +240,7 @@ def get_movie_data(urls_list):
 
             # extract scores data as dictionary
             scores_text = (soup.find_all('script', type=
-                                        'text/javascript')[2].text)
+                                        'text/javascript')[2].string)
             scores_text_lines_list = scores_text.split('\n')
             for line in scores_text_lines_list:
                 if 'root.RottenTomatoes.context.scoreInfo' in line:
