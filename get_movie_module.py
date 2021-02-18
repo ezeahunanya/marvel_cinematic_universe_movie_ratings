@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 import numpy as np
 import pandas as pd
 
-def get_movie_data1(urls_list):
+def get_movie_data1(url_list):
     """Get the movie data from its url.
 
     Arg:
@@ -108,7 +108,7 @@ def get_movie_data1(urls_list):
                 box_office_gross_usa_ = li_descendants[5]
                 break
             else:
-                box_office_gross_usa_1 = np.nan
+                box_office_gross_usa_ = np.nan
         box_office_gross_usa.append(box_office_gross_usa_)
 
         for i in[i for i in range(0, max_limit)]:
